@@ -1,24 +1,3 @@
-// import 'package:flutter/material.dart';
-
-// void main() {
-//   runApp(const MainApp());
-// }
-
-// class MainApp extends StatelessWidget {
-//   const MainApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return const MaterialApp(
-//       home: Scaffold(
-//         body: Center(
-//           child: Text('H!'),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -46,32 +25,41 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Dashboard"),
         centerTitle: true,
+        // backgroundColor: Colors.amber,
+        // toolbarHeight: 100,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Row(
+              children: [
+                Container(
+                  child: Text("image comes here"),
+                )
+              ],
+            ),
+            // Row with Day, Week, Month buttons
             Text("Task Overview", style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w800,
               letterSpacing: 0.2,
             ),
             ),
-            // Row with Day, Week, Month buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildTimeBlock("Day", Colors.greenAccent),
-                _buildTimeBlock("Week", Colors.greenAccent),
-                _buildTimeBlock("Month", Colors.greenAccent),
+                _buildTimeBlock("Day", Color.fromARGB(255, 217, 237, 227)),
+                _buildTimeBlock("Week", Color.fromARGB(255, 217, 237, 227)),
+                _buildTimeBlock("Month", Color.fromARGB(255, 217, 237, 227)),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _countTaskBlock("Completed Task", Colors.greenAccent),
-                _countTaskBlock("Completed Task", Colors.greenAccent),
+                _countTaskBlock("Completed Task", Color.fromARGB(255, 217, 237, 227)),
+                _countTaskBlock("Completed Task", Color.fromARGB(255, 217, 237, 227)),
               ],
             ),
             SizedBox(height: 20),
@@ -113,7 +101,7 @@ class HomePage extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
-                blurRadius: 5,
+                blurRadius: 3,
                 offset: Offset(2, 2),
               ),
             ],
