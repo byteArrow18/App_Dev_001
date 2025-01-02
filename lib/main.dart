@@ -52,13 +52,19 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text("Task Overview", style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 0.2,
+            ),
+            ),
             // Row with Day, Week, Month buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildTimeBlock("Day", Colors.blue),
-                _buildTimeBlock("Week", Colors.green),
-                _buildTimeBlock("Month", Colors.orange),
+                _buildTimeBlock("Day", Colors.greenAccent),
+                _buildTimeBlock("Week", Colors.greenAccent),
+                _buildTimeBlock("Month", Colors.greenAccent),
               ],
             ),
             Row(
@@ -116,9 +122,9 @@ class HomePage extends StatelessWidget {
             child: Text(
               label,
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+                color: Colors.black54,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
@@ -130,7 +136,7 @@ class HomePage extends StatelessWidget {
   Widget _countTaskBlock(String label, Color color) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.fromLTRB(8, 15, 8, 15),
+        margin: EdgeInsets.fromLTRB(5, 15, 5, 15),
         height: 120,
         decoration: BoxDecoration(
           color: color,
@@ -141,8 +147,9 @@ class HomePage extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              color: Colors.black87,
+              color: Colors.black54,
               fontSize: 14,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),
