@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
         title: Text("Dashboard"),
         centerTitle: true,
         // backgroundColor: Colors.amber,
-        // toolbarHeight: 100,
+        toolbarHeight: 30,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -35,8 +35,13 @@ class HomePage extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
-                  child: Text("image comes here"),
+                Expanded(
+                  child: Container(
+                    child: Text("image and account name comes here"),
+                    color: Colors.amber,
+                    height: 70,
+                    alignment: Alignment(0, 0),
+                  ),
                 )
               ],
             ),
