@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Todo Ap',
+      title: 'Multi Manager',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -44,7 +44,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Todo Dashboard"),
+        title: Text("Dashboard"),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -58,6 +59,13 @@ class HomePage extends StatelessWidget {
                 _buildTimeBlock("Day", Colors.blue),
                 _buildTimeBlock("Week", Colors.green),
                 _buildTimeBlock("Month", Colors.orange),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _countTaskBlock("Completed Task", Colors.greenAccent),
+                _countTaskBlock("Completed Task", Colors.greenAccent),
               ],
             ),
             SizedBox(height: 20),
@@ -91,6 +99,7 @@ class HomePage extends StatelessWidget {
           print('$label clicked');
         },
         child: Container(
+          margin: EdgeInsets.all(5),
           height: 50,
           decoration: BoxDecoration(
             color: color,
@@ -116,5 +125,28 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+  
+  Widget _countTaskBlock(String label, Color color) {
+    return Expanded(
+      child: Container(
+        margin: EdgeInsets.fromLTRB(8, 15, 8, 15),
+        height: 120,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Align(
+          alignment: Alignment(0, 0.8),
+          child: Text(
+            label,
+            style: TextStyle(
+              color: Colors.black87,
+              fontSize: 14,
+            ),
+          ),
+        ),
+      ),
+      );
   }
 }
