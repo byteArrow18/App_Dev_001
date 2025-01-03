@@ -52,36 +52,65 @@ class _HomePageState extends State<HomePage> {
         // backgroundColor: Colors.amber,
         // toolbarHeight: 30,
       // ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.lime,
-        child: Container(
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Colors.black26,
+              width: 1,
+            ),
+          ),
+        ),
+        child: BottomAppBar(
+          color: Colors.lime,
           height: 70,
-          padding: EdgeInsets.symmetric(horizontal: 30),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // Menu Option 1
-              IconButton(
-                icon: Icon(Icons.home),
-                onPressed: () {
-                  print("Home tapped");
-                },
-              ),
-              // Menu Option 2
-              IconButton(
-                icon: Icon(Icons.notifications),
-                onPressed: () {
-                  print("Notifications tapped");
-                },
-              ),
-              // Menu Option 3
-              IconButton(
-                icon: Icon(Icons.settings),
-                onPressed: () {
-                  print("Settings tapped");
-                },
-              ),
-            ],
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Menu Option 1
+                IconButton(
+                  icon: Icon(Icons.home),
+                  iconSize: 30,
+                  onPressed: () {
+                    print("Home tapped");
+                  },
+                ),
+                // Menu Option 2
+                IconButton(
+                  icon: Icon(Icons.notifications),
+                  iconSize: 30,
+                  onPressed: () {
+                    print("Notifications tapped");
+                  },
+                ),
+                // Menu Option 3
+                IconButton(
+                  icon: Icon(Icons.task),
+                  iconSize: 30,
+                  onPressed: () {
+                    print("Task tapped");
+                  },
+                ),
+                // Menu Option 4
+                IconButton(
+                  icon: Icon(Icons.date_range_rounded),
+                  iconSize: 30,
+                  onPressed: () {
+                    print("Date tapped");
+                  },
+                ),
+                // Menu Option 5
+                IconButton(
+                  icon: Icon(Icons.settings),
+                  iconSize: 30,
+                  onPressed: () {
+                    print("Settings tapped");
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
