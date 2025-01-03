@@ -1,3 +1,4 @@
+import 'package:app_dev_001/common/bottomNavBar.dart';
 import 'package:app_dev_001/home/presentation/countTaskBlock.dart';
 import 'package:app_dev_001/home/presentation/timeblock.dart';
 import 'package:flutter/material.dart';
@@ -36,73 +37,7 @@ class _HomePageState extends State<HomePage> {
         // backgroundColor: Colors.amber,
         // toolbarHeight: 30,
       // ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          border: Border(
-            top: BorderSide(
-              color: Colors.black26,
-              width: 1,
-            ),
-          ),
-        ),
-        child: BottomAppBar(
-          color: Colors.lime,
-          height: 70,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // Menu Option 1
-                IconButton(
-                  icon: Icon(Icons.home),
-                  iconSize: 30,
-                  onPressed: () {
-                    // ignore: avoid_print
-                    print("Home tapped");
-                  },
-                ),
-                // Menu Option 2
-                IconButton(
-                  icon: Icon(Icons.notifications),
-                  iconSize: 30,
-                  onPressed: () {
-                    // ignore: avoid_print
-                    print("Notifications tapped");
-                  },
-                ),
-                // Menu Option 3
-                IconButton(
-                  icon: Icon(Icons.task),
-                  iconSize: 30,
-                  onPressed: () {
-                    // ignore: avoid_print
-                    print("Task tapped");
-                  },
-                ),
-                // Menu Option 4
-                IconButton(
-                  icon: Icon(Icons.date_range_rounded),
-                  iconSize: 30,
-                  onPressed: () {
-                    // ignore: avoid_print
-                    print("Date tapped");
-                  },
-                ),
-                // Menu Option 5
-                IconButton(
-                  icon: Icon(Icons.settings),
-                  iconSize: 30,
-                  onPressed: () {
-                    // ignore: avoid_print
-                    print("Settings tapped");
-                  },
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      bottomNavigationBar: BottomNavBar(),
 
       body: SafeArea(
         child: Padding(
@@ -130,11 +65,11 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               // SizedBox(height: 50,),
-                              Text("    Name of individual will come here",),
+                              Text("Name of individual will come here",),
                               //login and signout button condition
                               isLoggedIn
-                                ? TextButton(onPressed: _signOut, child: Text("Sign Out"))
-                                : TextButton(onPressed: _login, child: Text("Login")),
+                                ? InkWell(onTap: _signOut, child: Text("Sign Out"))
+                                : InkWell(onTap: _login, child: Text("Login")),
                             ],
                           ),
                         ],
@@ -159,16 +94,28 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildTimeBlock("Day", Color.fromARGB(255, 217, 237, 227), 0),
-                  _buildTimeBlock("Week", Color.fromARGB(255, 217, 237, 227), 1),
-                  _buildTimeBlock("Month", Color.fromARGB(255, 217, 237, 227), 2),
+                  TimeBlockWidget(label:"Day", color: Color.fromARGB(255, 217, 237, 227), index: 0, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                    setState(() {
+                      selectBuildTimeBlock = value;
+                    });
+                   },),
+                   TimeBlockWidget(label:"Week", color: Color.fromARGB(255, 217, 237, 227), index: 1, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                    setState(() {
+                      selectBuildTimeBlock = value;
+                    });
+                   },),
+                   TimeBlockWidget(label:"Month", color: Color.fromARGB(255, 217, 237, 227), index: 2, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                    setState(() {
+                      selectBuildTimeBlock = value;
+                    });
+                   },),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  countTaskBlock(label: "Completed Task", color: Color.fromARGB(255, 217, 237, 227), taskCount: completedTask),
-                  countTaskBlock(label: "Pending Task", color: Color.fromARGB(255, 217, 237, 227), taskCount: pendingTask),
+                  CountTaskBlock(label: "Completed Task", color: Color.fromARGB(255, 217, 237, 227), taskCount: completedTask),
+                  CountTaskBlock(label: "Pending Task", color: Color.fromARGB(255, 217, 237, 227), taskCount: pendingTask),
                 ],
               ),
               SizedBox(height: 20),
@@ -211,14 +158,9 @@ class _HomePageState extends State<HomePage> {
     // ignore: avoid_print
     print("User signed out");
   }
-
-  // Method to build each time block (Day, Week, Month)
-  Widget _buildTimeBlock(String label, Color color, int index) {
-    return TimeBlockWidget(index: index, label: label, color: color, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) { setState(() {
-      selectBuildTimeBlock = value;
-    }); },);
-  }
 }
+
+
 
 
 

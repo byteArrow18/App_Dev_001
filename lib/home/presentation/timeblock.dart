@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 class TimeBlockWidget extends StatefulWidget {
   const TimeBlockWidget({
     super.key,
-    required this.index, required this.label, required this.color, required this.selectBuildTimeBlock, required this.selectTimeBuild
+    required this.index,
+    required this.label,
+    required this.color,
+    required this.selectBuildTimeBlock,
+    required this.selectTimeBuild
   });
 
   final int selectBuildTimeBlock;

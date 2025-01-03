@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class countTaskBlock extends StatelessWidget {
-  const countTaskBlock({
+class CountTaskBlock extends StatelessWidget {
+  const CountTaskBlock({
     super.key,
     required this.label,
     required this.color,
