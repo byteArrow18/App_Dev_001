@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:http/http.dart' as http;
+// import 'dart:convert';
 
 void main() {
   runApp(MyApp());
@@ -25,10 +27,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectBuildTimeBlock = 0;  //Set Day to 0 initially
+  bool isLoggedIn = false;
   int completedTask = 1;
   int pendingTask = 2;
   // int completedTask = fetchedData.completedTaskCount;  // Replace this with your API response
   // int pendingTask = fetchedData.pendingTaskCount;      // Replace this with your API response
+
+//==========================================================================
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   // Fetch data when the app starts
+  //   _fetchDataFromBackend();
+  // }
+//==========================================================================
 
 
   @override
@@ -40,6 +52,40 @@ class _HomePageState extends State<HomePage> {
         // backgroundColor: Colors.amber,
         // toolbarHeight: 30,
       // ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.lime,
+        child: Container(
+          height: 70,
+          padding: EdgeInsets.symmetric(horizontal: 30),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Menu Option 1
+              IconButton(
+                icon: Icon(Icons.home),
+                onPressed: () {
+                  print("Home tapped");
+                },
+              ),
+              // Menu Option 2
+              IconButton(
+                icon: Icon(Icons.notifications),
+                onPressed: () {
+                  print("Notifications tapped");
+                },
+              ),
+              // Menu Option 3
+              IconButton(
+                icon: Icon(Icons.settings),
+                onPressed: () {
+                  print("Settings tapped");
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -50,23 +96,48 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     child: Container(
-                      color: Colors.amber,
-                      height: 70,
-                      alignment: Alignment(0, 0),
-                      child: Text("image and account name comes here"),
+                      // color: Colors.amber,
+                      height: 160,
+                      child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(width: 20,),
+                          CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Colors.black,
+                          ),
+                          SizedBox(width: 20,),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              // SizedBox(height: 50,),
+                              Text("    Name of individual will come here",),
+                              //login and signout button condition
+                              isLoggedIn
+                                ? TextButton(onPressed: _signOut, child: Text("Sign Out"))
+                                : TextButton(onPressed: _login, child: Text("Login")),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   )
                 ],
               ),
               // Row with Day, Week, Month buttons
-              Text(
-                "Task Overview",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 0.2,
+              Align(
+                alignment: Alignment(-0.95, 0),
+                child: Text(
+                  "Task Overview",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 0.2,
+                  ),
                 ),
               ),
+              SizedBox(height: 10,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -105,6 +176,22 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  // Login action (Placeholder)
+  void _login() {
+    setState(() {
+      isLoggedIn = true;  // Simulate login
+    });
+    print("User logged in");
+  }
+
+  // Sign-out action (Placeholder)
+  void _signOut() {
+    setState(() {
+      isLoggedIn = false;  // Simulate sign out
+    });
+    print("User signed out");
+  }
+
   // Method to build each time block (Day, Week, Month)
   Widget _buildTimeBlock(String label, Color color, int index) {
     return Expanded(
@@ -114,6 +201,7 @@ class _HomePageState extends State<HomePage> {
             _selectBuildTimeBlock = index;
           });
           // Handle button press (you can add your logic here later)
+          // ignore: avoid_print
           print('$label clicked');
         },
         child: Container(
@@ -172,7 +260,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(height: 10), // Space between number and label
-            // Label Text (e.g., "Completed Task")
             Text(
               label,
               style: TextStyle(
@@ -187,3 +274,50 @@ class _HomePageState extends State<HomePage> {
       );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Function to fetch data from the backend (Rust API)
+// Future<void> _fetchDataFromBackend() async {
+//   try {
+//     final response = await http.get(Uri.parse('http://127.0.0.1:8080/tasks')); // URL of your Rust API
+//       if (response.statusCode == 200) {
+//         // Parse the JSON data from the response
+//         final data = jsonDecode(response.body);
+
+//         setState(() {
+//           completedTask = data['completed_task'];  // Set completed task count dynamically
+//           pendingTask = data['pending_task'];      // Set pending task count dynamically
+//         });
+//         print("Fetched data: Completed Tasks - $completedTask, Pending Tasks - $pendingTask");
+//       } else {
+//         throw Exception('Failed to load task data');
+//       }
+//     } catch (e) {
+//       print("Error fetching data: $e");
+//     }
+//   }
+// }
