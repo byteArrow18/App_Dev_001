@@ -77,6 +77,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(Icons.home),
                   iconSize: 30,
                   onPressed: () {
+                    // ignore: avoid_print
                     print("Home tapped");
                   },
                 ),
@@ -85,6 +86,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(Icons.notifications),
                   iconSize: 30,
                   onPressed: () {
+                    // ignore: avoid_print
                     print("Notifications tapped");
                   },
                 ),
@@ -93,6 +95,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(Icons.task),
                   iconSize: 30,
                   onPressed: () {
+                    // ignore: avoid_print
                     print("Task tapped");
                   },
                 ),
@@ -101,6 +104,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(Icons.date_range_rounded),
                   iconSize: 30,
                   onPressed: () {
+                    // ignore: avoid_print
                     print("Date tapped");
                   },
                 ),
@@ -109,6 +113,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(Icons.settings),
                   iconSize: 30,
                   onPressed: () {
+                    // ignore: avoid_print
                     print("Settings tapped");
                   },
                 ),
@@ -213,6 +218,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       isLoggedIn = true;  // Simulate login
     });
+    // ignore: avoid_print
     print("User logged in");
   }
 
@@ -221,6 +227,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       isLoggedIn = false;  // Simulate sign out
     });
+    // ignore: avoid_print
     print("User signed out");
   }
 
