@@ -1,3 +1,4 @@
+import 'package:app_dev_001/widgets/timeblock.dart';
 import 'package:flutter/material.dart';
 // import 'package:http/http.dart' as http;
 // import 'dart:convert';
@@ -21,12 +22,14 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectBuildTimeBlock = 0;  //Set Day to 0 initially
+  int selectBuildTimeBlock = 0;
   bool isLoggedIn = false;
   int completedTask = 1;
   int pendingTask = 2;
@@ -223,47 +226,9 @@ class _HomePageState extends State<HomePage> {
 
   // Method to build each time block (Day, Week, Month)
   Widget _buildTimeBlock(String label, Color color, int index) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: () {
-          setState(() {
-            _selectBuildTimeBlock = index;
-          });
-          // Handle button press (you can add your logic here later)
-          // ignore: avoid_print
-          print('$label clicked');
-        },
-        child: Container(
-          margin: EdgeInsets.all(5),
-          height: 50,
-          decoration: BoxDecoration(
-            color: _selectBuildTimeBlock == index ? const Color.fromARGB(255, 20, 244, 136) : color,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: _selectBuildTimeBlock == index ? const Color.fromARGB(255, 62, 236, 152) : Colors.transparent,
-              width: 2,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: _selectBuildTimeBlock == index ? const Color.fromARGB(255, 52, 163, 110) : Colors.black12,
-                blurRadius: 4,
-                offset: Offset(2, 2),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Text(
-              label,
-              style: TextStyle(
-                color: Colors.black54,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
+    return TimeBlockWidget(index: index, label: label, color: color, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) { setState(() {
+      selectBuildTimeBlock = value;
+    }); },);
   }
 
   Widget _countTaskBlock(String label, Color color, int taskCount) {
@@ -281,7 +246,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             // Static Number Display
             Text(
-              taskCount.toString(), // Display static value (this will change dynamically later)
+              taskCount.toString(), // display static value (change dynamically later)
               style: TextStyle(
                 fontSize: 40, 
                 fontWeight: FontWeight.bold,
@@ -303,8 +268,6 @@ class _HomePageState extends State<HomePage> {
       );
   }
 }
-
-
 
 
 
