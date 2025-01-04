@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:app_dev_001/task/presentation/task.dart';
 
 class BottomBarIcon extends StatelessWidget {
   final IconData icon;
@@ -23,7 +24,12 @@ class BottomBarIcon extends StatelessWidget {
         IconButton(
           icon: Icon(icon),
           iconSize: 30,
-          onPressed: onPressed,
+          onPressed:  
+            () {
+            Navigator.push(context,
+              MaterialPageRoute(builder: (context) => TaskPage()),
+            );
+          },
         ),
         Text(
           label,
