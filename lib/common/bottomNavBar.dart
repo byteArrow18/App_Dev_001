@@ -1,4 +1,6 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
+import 'package:app_dev_001/common/bottomBarIcon.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -17,58 +19,63 @@ class BottomNavBar extends StatelessWidget {
         ),
       ),
       child: BottomAppBar(
+        padding: EdgeInsets.zero,
         color: Colors.lime,
         height: 70,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+
+          //testing decoration box remove------------------------
+          decoration: BoxDecoration(
+            border: Border(
+              top: BorderSide(
+                color: const Color.fromARGB(255, 248, 16, 16),
+                width: 2,
+              ),
+              bottom: BorderSide(
+                color: const Color.fromARGB(255, 248, 16, 16),
+                width: 2,
+              ),
+              right: BorderSide(
+                color: const Color.fromARGB(255, 248, 16, 16),
+                width: 2,
+              ),
+              left: BorderSide(
+                color: const Color.fromARGB(255, 248, 16, 16),
+                width: 2,
+              ),
+            ),
+          ),
+          //testing decoration box remove------------------------
+
+          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Menu Option 1
-              IconButton(
-                icon: Icon(Icons.home),
-                iconSize: 30,
-                onPressed: () {
-                  // ignore: avoid_print
-                  print("Home tapped");
-                },
-              ),
-              // Menu Option 2
-              IconButton(
-                icon: Icon(Icons.notifications),
-                iconSize: 30,
-                onPressed: () {
-                  // ignore: avoid_print
-                  print("Notifications tapped");
-                },
-              ),
-              // Menu Option 3
-              IconButton(
-                icon: Icon(Icons.task),
-                iconSize: 30,
-                onPressed: () {
-                  // ignore: avoid_print
-                  print("Task tapped");
-                },
-              ),
-              // Menu Option 4
-              IconButton(
-                icon: Icon(Icons.date_range_rounded),
-                iconSize: 30,
-                onPressed: () {
-                  // ignore: avoid_print
-                  print("Date tapped");
-                },
-              ),
-              // Menu Option 5
-              IconButton(
-                icon: Icon(Icons.settings),
-                iconSize: 30,
-                onPressed: () {
-                  // ignore: avoid_print
-                  print("Settings tapped");
-                },
-              ),
+              BottomBarIcon(icon: Icons.home, label: 'Home', onPressed: () {
+                print("Home Tapped");
+              }),
+              BottomBarIcon(icon: Icons.notifications, label: 'Notification', onPressed: () {
+                print("Notification Tapped");
+              }),
+              BottomBarIcon(icon: Icons.task, label: 'Task', onPressed: () {
+                print("Task Tapped");
+              }),
+              BottomBarIcon(icon: Icons.date_range_rounded, label: 'Date', onPressed: () {
+                print("Date Tapped");
+              }),
+              BottomBarIcon(icon: Icons.settings, label: 'Settings', onPressed: () {
+                print("Settings Tapped");
+              }),
+              
+              // IconButton(
+              //   icon: Icon(Icons.settings),
+              //   iconSize: 30,
+              //   onPressed: () {
+              //     // ignore: avoid_print
+              //     print("Settings tapped");
+              //   },
+              // ),
             ],
           ),
         ),
