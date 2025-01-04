@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:app_dev_001/common/bottomNavBar.dart';
 import 'package:app_dev_001/home/presentation/countTaskBlock.dart';
 import 'package:app_dev_001/home/presentation/timeblock.dart';
@@ -15,8 +17,6 @@ class _HomePageState extends State<HomePage> {
   bool isLoggedIn = false;
   int completedTask = 1;
   int pendingTask = 2;
-  // int completedTask = fetchedData.completedTaskCount;  // Replace this with your API response
-  // int pendingTask = fetchedData.pendingTaskCount;      // Replace this with your API response
 
 //==========================================================================
   // @override
