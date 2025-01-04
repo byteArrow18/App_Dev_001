@@ -1,5 +1,7 @@
 // ignore_for_file: file_names
 
+import 'package:app_dev_001/home/presentation/home.dart';
+import 'package:app_dev_001/task/presentation/task.dart';
 import 'package:flutter/material.dart';
 
 class LoadPage extends StatefulWidget {
@@ -11,6 +13,15 @@ class LoadPage extends StatefulWidget {
 
 class _LoadPageState extends State<LoadPage> {
   int myIndex = 0;
+  List<Widget> widgetList = const [
+    Text('Home'),
+    Text('Task'),
+    Text('Date'),
+    Text('Settings'),
+    Text('Notifications'),
+    // HomePage(),
+    // TaskPage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,28 +50,17 @@ class _LoadPageState extends State<LoadPage> {
             },
             currentIndex: myIndex,
             items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.task),
-                label: 'Task',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.date_range_rounded),
-                label: 'Date',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'Settings',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.notification_add),
-                label: 'Notifications',
-              ),
+              BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home',),
+              BottomNavigationBarItem(icon: Icon(Icons.task),label: 'Task',),
+              BottomNavigationBarItem(icon: Icon(Icons.date_range_rounded),label: 'Date',),
+              BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Settings',),
+              BottomNavigationBarItem(icon: Icon(Icons.notification_add),label: 'Notifications',),
             ]
           ),
+        ),
+
+        body: Center(
+          child: widgetList[myIndex],
         ),
       ),
     );
