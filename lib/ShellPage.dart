@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class LoadPage extends StatefulWidget {
@@ -26,6 +28,9 @@ class _LoadPageState extends State<LoadPage> {
             )
           ),
           child: BottomNavigationBar(
+            selectedItemColor: Colors.red,
+            unselectedItemColor: Colors.black,
+            showUnselectedLabels: true,
             // showUnselectedLabels: true,
             onTap: (index) {
               setState(() {
@@ -43,17 +48,17 @@ class _LoadPageState extends State<LoadPage> {
                 label: 'Task',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.date_range_rounded, color: Colors.greenAccent,),
+                icon: Icon(Icons.date_range_rounded),
                 label: 'Date',
               ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.settings, color: Colors.amberAccent,),
-              //   label: 'Settings',
-              // ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.notification_add, color: Colors.amberAccent,),
-              //   label: 'Notifications',
-              // ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+                label: 'Settings',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.notification_add),
+                label: 'Notifications',
+              ),
             ]
           ),
         ),
