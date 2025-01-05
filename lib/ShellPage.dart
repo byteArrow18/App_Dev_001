@@ -14,20 +14,26 @@ class LoadPage extends StatefulWidget {
 class _LoadPageState extends State<LoadPage> {
   int myIndex = 0;
   List<Widget> widgetList = const [
-    Text('Home'),
-    Text('Task'),
+    HomePage(),
+    // Text('Home'),
+    TaskPage(),
+    // Text('Task'),
     Text('Date'),
     Text('Settings'),
     Text('Notifications'),
-    // HomePage(),
-    // TaskPage(),
   ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        // appBar: AppBar(
+        // title: Text("Dashboard"),
+        // centerTitle: true,
+        // backgroundColor: Colors.amber,
+        // toolbarHeight: 30,
+        // ),
         bottomNavigationBar: Container(
-          // padding: EdgeInsets.all(5),
+          padding: EdgeInsets.all(2),
           alignment: Alignment.bottomCenter,
           height: 65,
           decoration: BoxDecoration(

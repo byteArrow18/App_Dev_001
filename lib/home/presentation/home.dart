@@ -1,6 +1,5 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:app_dev_001/common/bottomNavBar.dart';
 import 'package:app_dev_001/home/presentation/countTaskBlock.dart';
 import 'package:app_dev_001/home/presentation/timeblock.dart';
 import 'package:flutter/material.dart';
@@ -30,17 +29,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(
-        // title: Text("Dashboard"),
-        // centerTitle: true,
-        // backgroundColor: Colors.amber,
-        // toolbarHeight: 30,
-      // ),
-      bottomNavigationBar: BottomNavBar(),
-
-      body: SafeArea(
-        child: Padding(
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,10 +40,9 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     child: Container(
-                      // color: Colors.amber,
+                      color: Colors.amber,
                       height: 160,
                       child: Row(
-                        // mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(width: 20,),
                           CircleAvatar(
@@ -64,9 +54,7 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              // SizedBox(height: 50,),
                               Text("Name of individual will come here",),
-                              //login and signout button condition
                               isLoggedIn
                                 ? InkWell(onTap: _signOut, child: Text("Sign Out"))
                                 : InkWell(onTap: _login, child: Text("Login")),

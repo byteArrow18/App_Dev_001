@@ -35,7 +35,7 @@ class CountTaskBlock extends StatelessWidget {
                 color: Colors.black87,
               ),
             ),
-            SizedBox(height: 10), // Space between number and label
+            SizedBox(height: 10), // space between number and label
             Text(
               label,
               style: TextStyle(
