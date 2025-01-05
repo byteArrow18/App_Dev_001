@@ -35,10 +35,10 @@ class _TimeBlockWidgetState extends State<TimeBlockWidget> {
           margin: EdgeInsets.all(5),
           height: 50,
           decoration: BoxDecoration(
-            color: widget.selectBuildTimeBlock == widget.index ? const Color.fromARGB(255, 20, 244, 136) : widget.color,
+            color: widget.selectBuildTimeBlock == widget.index ? Color.fromARGB(255, 135, 236, 186) : widget.color,
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: widget.selectBuildTimeBlock == widget.index ? const Color.fromARGB(255, 62, 236, 152) : Colors.transparent,
+              color: widget.selectBuildTimeBlock == widget.index ? const Color.fromARGB(255, 138, 234, 188) : Colors.transparent,
               width: 2,
             ),
             boxShadow: [

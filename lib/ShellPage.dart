@@ -4,14 +4,14 @@ import 'package:app_dev_001/summary/presentation/summary.dart';
 import 'package:app_dev_001/task/presentation/task.dart';
 import 'package:flutter/material.dart';
 
-class LoadPage extends StatefulWidget {
-  const LoadPage({super.key});
+class ShellPage extends StatefulWidget {
+  const ShellPage({super.key});
 
   @override
-  State<LoadPage> createState() => _LoadPageState();
+  State<ShellPage> createState() => _ShellPageState();
 }
 
-class _LoadPageState extends State<LoadPage> {
+class _ShellPageState extends State<ShellPage> {
   int myIndex = 2;
   List<Widget> widgetList = const [
     Text('Home'),
@@ -44,7 +44,8 @@ class _LoadPageState extends State<LoadPage> {
             )
           ),
           child: BottomNavigationBar(
-            selectedItemColor: Colors.red,
+            // selectedItemColor: Colors.red,
+            selectedItemColor: Color.fromARGB(255, 36, 195, 115),
             unselectedItemColor: Colors.black,
             showUnselectedLabels: true,
             // showUnselectedLabels: true,

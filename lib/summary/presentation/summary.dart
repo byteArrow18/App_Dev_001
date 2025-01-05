@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     child: Container(
-                      color: Colors.amber,
+                      // color: Colors.amber,
                       height: 160,
                       child: Row(
                         children: [
@@ -78,42 +78,44 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 5,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TimeBlockWidget(label:"Day", color: Color.fromARGB(255, 217, 237, 227), index: 0, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                  TimeBlockWidget(label:"Day", color: Color.fromARGB(255, 238, 241, 239), index: 0, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
                     setState(() {
                       selectBuildTimeBlock = value;
                     });
                    },),
-                   TimeBlockWidget(label:"Week", color: Color.fromARGB(255, 217, 237, 227), index: 1, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                   TimeBlockWidget(label:"Week", color: Color.fromARGB(255, 238, 241, 239), index: 1, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
                     setState(() {
                       selectBuildTimeBlock = value;
                     });
                    },),
-                   TimeBlockWidget(label:"Month", color: Color.fromARGB(255, 217, 237, 227), index: 2, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                   TimeBlockWidget(label:"Month", color: Color.fromARGB(255, 238, 241, 239), index: 2, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
                     setState(() {
                       selectBuildTimeBlock = value;
                     });
                    },),
                 ],
               ),
+              SizedBox(height: 5,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  CountTaskBlock(label: "Completed Task", color: Color.fromARGB(255, 217, 237, 227), taskCount: completedTask),
-                  CountTaskBlock(label: "Pending Task", color: Color.fromARGB(255, 217, 237, 227), taskCount: pendingTask),
+                  CountTaskBlock(label: "Completed Task", color: Color.fromARGB(255, 238, 241, 239), taskCount: completedTask),
+                  CountTaskBlock(label: "Pending Task", color: Color.fromARGB(255, 238, 241, 239), taskCount: pendingTask),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               // Graph Container below the buttons
               Container(
                 width: double.infinity,
                 height: 250,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.grey[200],
+                  color: Color.fromARGB(255, 238, 241, 239),
+                  // color: Color.fromARGB(255, 217, 237, 227),
                 ),
                 child: Center(
                   child: Text(
