@@ -12,7 +12,7 @@ class LoadPage extends StatefulWidget {
 }
 
 class _LoadPageState extends State<LoadPage> {
-  int myIndex = 0;
+  int myIndex = 1;
   List<Widget> widgetList = const [
     HomePage(),
     // Text('Home'),
@@ -49,6 +49,7 @@ class _LoadPageState extends State<LoadPage> {
             unselectedItemColor: Colors.black,
             showUnselectedLabels: true,
             // showUnselectedLabels: true,
+            // type: BottomNavigationBarType.fixed,
             onTap: (index) {
               setState(() {
                 myIndex = index;
