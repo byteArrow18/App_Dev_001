@@ -31,39 +31,44 @@ class _TaskePageState extends State<TaskPage> {
           onPressed: () => showModalBottomSheet(
             context: context,
             builder: (BuildContext context) => Container(
-              height: 500,
+              height: 150,
               color: Colors.purple,
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Add Task',
-                      ),
-                    ],
-                  ),
-                  Divider(thickness: 1.2),
-                  SizedBox(height: 20),
-                  SizedBox(
-                    width: 440,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide(color: Colors.deepOrange),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Row(
+                    //   children: [
+                    //     Text(
+                    //       'Add Task',
+                    //     ),
+                    //   ],
+                    // ),
+                    // Divider(thickness: 1.2),
+                    // SizedBox(height: 200),
+                    SizedBox(
+                      width: 300,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                            borderSide: BorderSide(color: Colors.deepOrange),
+                          ),
+                          fillColor: Colors.white,
+                          filled: true,
+                          hintText: 'Enter task',
                         ),
-                        fillColor: Colors.white,
-                        filled: true,
-                        hintText: 'Enter task',
                       ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      FloatingActionButton(onPressed: () => print('pressed'))
-                    ],
-                  ),
-                ],
+                    Row(
+                      children: [
+                        FloatingActionButton(onPressed: () => print('pressed'))
+                      ],
+                    ),
+                  ],
+                ),
               ),
             )
           ),
