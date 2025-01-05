@@ -1,7 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:app_dev_001/home/presentation/countTaskBlock.dart';
-import 'package:app_dev_001/home/presentation/timeblock.dart';
+import 'package:app_dev_001/summary/presentation/countTaskBlock.dart';
+import 'package:app_dev_001/summary/presentation/timeblock.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
