@@ -12,14 +12,13 @@ class LoadPage extends StatefulWidget {
 }
 
 class _LoadPageState extends State<LoadPage> {
-  int myIndex = 1;
+  int myIndex = 2;
   List<Widget> widgetList = const [
-    HomePage(),
-    // Text('Home'),
+    Text('Home'),
     TaskPage(),
     // Text('Task'),
+    HomePage(),
     Text('Date'),
-    Text('Settings'),
     Text('Notifications'),
   ];
   @override
@@ -59,8 +58,8 @@ class _LoadPageState extends State<LoadPage> {
             items: [
               BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home',),
               BottomNavigationBarItem(icon: Icon(Icons.task),label: 'Task',),
+              BottomNavigationBarItem(icon: Icon(Icons.query_stats_outlined),label: 'Summary',),
               BottomNavigationBarItem(icon: Icon(Icons.date_range_rounded),label: 'Date',),
-              BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Settings',),
               BottomNavigationBarItem(icon: Icon(Icons.notification_add),label: 'Notifications',),
             ]
           ),
