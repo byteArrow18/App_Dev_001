@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_final_fields
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 
@@ -20,7 +22,6 @@ class _TaskePageState extends State<TaskPage> {
         appBar: AppBar(
           backgroundColor: Colors.deepOrangeAccent,
         ),
-        backgroundColor: const Color.fromARGB(255, 255, 225, 135),
         body: Padding(
           padding: EdgeInsets.all(20),
         ),
@@ -30,42 +31,44 @@ class _TaskePageState extends State<TaskPage> {
           ),
           onPressed: () => showModalBottomSheet(
             context: context,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20), // Rounded top-left corner
+                topRight: Radius.circular(20), // Rounded top-right corner
+              ),
+            ),
+            clipBehavior: Clip.hardEdge,
             builder: (BuildContext context) => Container(
               height: 150,
-              color: Colors.purple,
+              color: Color.fromARGB(255, 238, 241, 239),
               child: Padding(
-                padding: const EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Row(
-                    //   children: [
-                    //     Text(
-                    //       'Add Task',
-                    //     ),
-                    //   ],
-                    // ),
-                    // Divider(thickness: 1.2),
-                    // SizedBox(height: 200),
-                    SizedBox(
-                      width: 300,
+                    Container(
+                      padding: EdgeInsets.only(top: 5),
+                      width: 350,
+                      height: 70,
                       child: TextField(
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                            borderSide: BorderSide(color: Colors.deepOrange),
-                          ),
+                          border: InputBorder.none,
                           fillColor: Colors.white,
                           filled: true,
                           hintText: 'Enter task',
+                          // contentPadding: EdgeInsets.symmetric(vertical: 15),
                         ),
                       ),
                     ),
-                    Row(
-                      children: [
-                        FloatingActionButton(onPressed: () => print('pressed'))
-                      ],
+                    SizedBox(width: 20,),
+                    FloatingActionButton(
+                      onPressed: () => print('pressed'),
+                      elevation: 0,
+                      backgroundColor: Color.fromARGB(255, 119, 195, 144),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(500)
+                      ),
                     ),
                   ],
                 ),

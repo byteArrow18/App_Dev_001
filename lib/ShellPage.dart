@@ -12,7 +12,7 @@ class ShellPage extends StatefulWidget {
 }
 
 class _ShellPageState extends State<ShellPage> {
-  int myIndex = 2;
+  int myIndex = 1;
   List<Widget> widgetList = const [
     Text('Home'),
     TaskPage(),
@@ -45,9 +45,10 @@ class _ShellPageState extends State<ShellPage> {
           ),
           child: BottomNavigationBar(
             // selectedItemColor: Colors.red,
-            selectedItemColor: Color.fromARGB(255, 36, 195, 115),
+            selectedItemColor: Color.fromARGB(255, 2, 176, 89),
             unselectedItemColor: Colors.black,
             showUnselectedLabels: true,
+            // backgroundColor: Colors.amberAccent,
             // showUnselectedLabels: true,
             // type: BottomNavigationBarType.fixed,
             onTap: (index) {
