@@ -58,7 +58,7 @@ class _ShellPageState extends State<ShellPage> {
             },
             currentIndex: myIndex,
             items: [
-              BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home',),
+              BottomNavigationBarItem(icon: Icon(Icons.menu),label: null,),
               BottomNavigationBarItem(icon: Icon(Icons.task),label: 'Task',),
               BottomNavigationBarItem(icon: Icon(Icons.query_stats_outlined),label: 'Summary',),
               BottomNavigationBarItem(icon: Icon(Icons.date_range_rounded),label: 'Date',),
