@@ -58,11 +58,12 @@ class _ShellPageState extends State<ShellPage> {
             },
             currentIndex: myIndex,
             items: [
-              BottomNavigationBarItem(icon: Icon(Icons.menu),label: null,),
+              // BottomNavigationBarItem(icon: SizedBox(width: 24, height: 24, child: Icon(Icons.menu), ), label: '',),
+              BottomNavigationBarItem(icon: Icon(Icons.menu),label: 'Menu',),
               BottomNavigationBarItem(icon: Icon(Icons.task),label: 'Task',),
               BottomNavigationBarItem(icon: Icon(Icons.query_stats_outlined),label: 'Summary',),
               BottomNavigationBarItem(icon: Icon(Icons.date_range_rounded),label: 'Date',),
-              BottomNavigationBarItem(icon: Icon(Icons.notification_add),label: 'Notifications',),
+              BottomNavigationBarItem(icon: Icon(Icons.folder),label: 'Notifications',),
             ]
           ),
         ),
