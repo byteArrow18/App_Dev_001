@@ -50,7 +50,7 @@ class _ShellPageState extends State<ShellPage> {
             showUnselectedLabels: true,
             // backgroundColor: Colors.amberAccent,
             // showUnselectedLabels: true,
-            // type: BottomNavigationBarType.fixed,
+            type: BottomNavigationBarType.fixed,
             onTap: (index) {
               setState(() {
                 myIndex = index;
@@ -63,7 +63,7 @@ class _ShellPageState extends State<ShellPage> {
               BottomNavigationBarItem(icon: Icon(Icons.task),label: 'Task',),
               BottomNavigationBarItem(icon: Icon(Icons.query_stats_outlined),label: 'Summary',),
               BottomNavigationBarItem(icon: Icon(Icons.date_range_rounded),label: 'Date',),
-              BottomNavigationBarItem(icon: Icon(Icons.folder),label: 'Notifications',),
+              BottomNavigationBarItem(icon: Icon(Icons.folder),label: 'Files',),
             ]
           ),
         ),
