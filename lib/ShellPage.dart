@@ -25,12 +25,12 @@ class _ShellPageState extends State<ShellPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-        title: Text("Dashboard"),
-        centerTitle: true,
-        backgroundColor: Colors.amber,
-        toolbarHeight: 30,
-        ),
+        // appBar: AppBar(
+        // title: Text("Dashboard"),
+        // centerTitle: true,
+        // backgroundColor: Colors.amber,
+        // toolbarHeight: 30,
+        // ),
         bottomNavigationBar: Container(
           padding: EdgeInsets.all(2),
           alignment: Alignment.bottomCenter,
