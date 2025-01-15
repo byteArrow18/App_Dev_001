@@ -65,12 +65,13 @@ class _TaskePageState extends State<TaskPage> {
                     FloatingActionButton(
                       onPressed: () => print('pressed'),
                       elevation: 0,
-                      backgroundColor: Color.fromARGB(255, 119, 195, 144),
+                      backgroundColor: Color.fromARGB(255, 178, 221, 192),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(500),
                       ),
                       child: Icon(
                         Icons.send_outlined,
+                        color: Color.fromARGB(255, 19, 106, 48),
                       ),
                     ),
                   ],
