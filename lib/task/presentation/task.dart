@@ -70,7 +70,7 @@ class _TaskePageState extends State<TaskPage> {
                         borderRadius: BorderRadius.circular(500),
                       ),
                       child: Icon(
-                        Icons.arrow_right,
+                        Icons.task_alt,
                       ),
                     ),
                   ],
