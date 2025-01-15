@@ -67,7 +67,10 @@ class _TaskePageState extends State<TaskPage> {
                       elevation: 0,
                       backgroundColor: Color.fromARGB(255, 119, 195, 144),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(500)
+                        borderRadius: BorderRadius.circular(500),
+                      ),
+                      child: Icon(
+                        Icons.arrow_right,
                       ),
                     ),
                   ],
