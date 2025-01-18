@@ -43,15 +43,18 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                     child: Container(
                       // color: Colors.amber,
-                      height: 160,
+                      // height: 160,
+                      height: widget.screenHeight * 0.16,
                       child: Row(
                         children: [
-                          SizedBox(width: 20,),
+                          // SizedBox(width: 20,),
+                          SizedBox(width: widget.screenWidth * 0.04,),
                           CircleAvatar(
                             radius: 50,
                             backgroundColor: Colors.black,
                           ),
-                          SizedBox(width: 20,),
+                          // SizedBox(width: 20,),
+                          SizedBox(width: widget.screenWidth * 0.044,),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +73,7 @@ class _HomePageState extends State<HomePage> {
               ),
               // Row with Day, Week, Month buttons
               Align(
-                alignment: Alignment(-0.95, 0),
+                alignment: Alignment.bottomLeft,
                 child: Text(
                   "Task Overview",
                   style: TextStyle(
@@ -80,7 +83,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 5,),
+              // SizedBox(height: 5,),
+              SizedBox(height: widget.screenHeight * 0.005,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -102,7 +106,8 @@ class _HomePageState extends State<HomePage> {
                    },),
                 ],
               ),
-              SizedBox(height: 5,),
+              // SizedBox(height: 5,),
+              SizedBox(height: widget.screenHeight * 0.005,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -110,11 +115,13 @@ class _HomePageState extends State<HomePage> {
                   CountTaskBlock(label: "Pending Task", color: const Color.fromARGB(255, 237, 227, 255), taskCount: pendingTask),
                 ],
               ),
-              SizedBox(height: 10),
+              // SizedBox(height: 10),
+              SizedBox(height: widget.screenHeight * 0.01,),
               // Graph Container below the buttons
               Container(
                 width: double.infinity,
-                height: 250,
+                // height: 250,
+                height: widget.screenHeight * 0.25,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: const Color.fromARGB(255, 237, 227, 255),
