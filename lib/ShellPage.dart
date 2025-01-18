@@ -15,16 +15,16 @@ class ShellPage extends StatefulWidget {
 
 class _ShellPageState extends State<ShellPage> {
   int myIndex = 2;
-  List<Widget> widgetList = const [
-    Text('Home'),
-    TaskPage(),
-    // Text('Task'),
-    HomePage(),
-    Text('Date'),
-    Text('Notifications'),
-  ];
   @override
   Widget build(BuildContext context) {
+    List<Widget> widgetList = [
+      Text('Home'),
+      TaskPage(),
+      // Text('Task'),
+      HomePage(screenHeight: widget.screenHeight, screenWidth: widget.screenWidth),
+      Text('Date'),
+      Text('Notifications'),
+    ];
     return SafeArea(
       child: Scaffold(
         // appBar: AppBar(

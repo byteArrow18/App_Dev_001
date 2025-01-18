@@ -5,7 +5,9 @@ import 'package:app_dev_001/summary/presentation/timeblock.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final double screenHeight;
+  final double screenWidth;
+  const HomePage({super.key, required this.screenWidth, required this.screenHeight});
 
   @override
   State<HomePage> createState() => _HomePageState();
