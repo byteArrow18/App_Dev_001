@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                           CircleAvatar(
                             // radius: 50,
                             radius: widget.screenWidth * 0.1,
-                            backgroundColor: Colors.black,
+                            backgroundColor: const Color.fromARGB(255, 116, 36, 255),
                           ),
                           // SizedBox(width: 20,),
                           SizedBox(width: widget.screenWidth * 0.04,),

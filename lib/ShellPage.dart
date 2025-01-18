@@ -46,9 +46,8 @@ class _ShellPageState extends State<ShellPage> {
             )
           ),
           child: BottomNavigationBar(
-            // selectedItemColor: Colors.red,
             // selectedItemColor: Color.fromARGB(255, 2, 176, 89),
-            selectedItemColor: Colors.deepPurple,
+            selectedItemColor: const Color.fromARGB(255, 147, 85, 255),
             unselectedItemColor: Colors.black,
             showUnselectedLabels: true,
             // backgroundColor: Colors.amberAccent,
