@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                             backgroundColor: Colors.black,
                           ),
                           // SizedBox(width: 20,),
-                          SizedBox(width: widget.screenWidth * 0.044,),
+                          SizedBox(width: widget.screenWidth * 0.04,),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
