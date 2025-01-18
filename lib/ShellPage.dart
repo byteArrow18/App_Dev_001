@@ -5,14 +5,16 @@ import 'package:app_dev_001/task/presentation/task.dart';
 import 'package:flutter/material.dart';
 
 class ShellPage extends StatefulWidget {
-  const ShellPage({super.key});
-
+  final double screenWidth;
+  final double screenHeight;
+  const ShellPage({super.key, required this.screenWidth, required this.screenHeight});
+  // const ShellPage({super.key});
   @override
   State<ShellPage> createState() => _ShellPageState();
 }
 
 class _ShellPageState extends State<ShellPage> {
-  int myIndex = 1;
+  int myIndex = 2;
   List<Widget> widgetList = const [
     Text('Home'),
     TaskPage(),
@@ -32,13 +34,13 @@ class _ShellPageState extends State<ShellPage> {
         // toolbarHeight: 30,
         // ),
         bottomNavigationBar: Container(
-          padding: EdgeInsets.all(2),
+          padding: EdgeInsets.zero,
           alignment: Alignment.bottomCenter,
-          height: 65,
+          height: widget.screenHeight * 0.065,
           decoration: BoxDecoration(
             border: Border(
               top: BorderSide(
-                color: const Color.fromARGB(30, 190, 190, 190),
+                color: const Color.fromARGB(30, 255, 0, 0),
                 width: 2,
               ),
             )
