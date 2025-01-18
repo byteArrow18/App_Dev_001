@@ -82,17 +82,18 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TimeBlockWidget(label:"Day", color: Color.fromARGB(255, 238, 241, 239), index: 0, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                  // TimeBlockWidget(label:"Day", color: Color.fromARGB(255, 238, 241, 239), index: 0, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                  TimeBlockWidget(label:"Day", color: const Color.fromARGB(255, 237, 227, 255), index: 0, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
                     setState(() {
                       selectBuildTimeBlock = value;
                     });
                    },),
-                   TimeBlockWidget(label:"Week", color: Color.fromARGB(255, 238, 241, 239), index: 1, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                   TimeBlockWidget(label:"Week", color: const Color.fromARGB(255, 237, 227, 255), index: 1, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
                     setState(() {
                       selectBuildTimeBlock = value;
                     });
                    },),
-                   TimeBlockWidget(label:"Month", color: Color.fromARGB(255, 238, 241, 239), index: 2, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
+                   TimeBlockWidget(label:"Month", color: const Color.fromARGB(255, 237, 227, 255), index: 2, selectBuildTimeBlock: selectBuildTimeBlock, selectTimeBuild: (value) {
                     setState(() {
                       selectBuildTimeBlock = value;
                     });
@@ -103,8 +104,8 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  CountTaskBlock(label: "Completed Task", color: Color.fromARGB(255, 238, 241, 239), taskCount: completedTask),
-                  CountTaskBlock(label: "Pending Task", color: Color.fromARGB(255, 238, 241, 239), taskCount: pendingTask),
+                  CountTaskBlock(label: "Completed Task", color: const Color.fromARGB(255, 237, 227, 255), taskCount: completedTask),
+                  CountTaskBlock(label: "Pending Task", color: const Color.fromARGB(255, 237, 227, 255), taskCount: pendingTask),
                 ],
               ),
               SizedBox(height: 10),
@@ -114,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                 height: 250,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Color.fromARGB(255, 238, 241, 239),
+                  color: const Color.fromARGB(255, 237, 227, 255),
                   // color: Color.fromARGB(255, 217, 237, 227),
                 ),
                 child: Center(

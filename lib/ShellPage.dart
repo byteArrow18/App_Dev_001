@@ -35,19 +35,20 @@ class _ShellPageState extends State<ShellPage> {
         // ),
         bottomNavigationBar: Container(
           padding: EdgeInsets.zero,
-          alignment: Alignment.bottomCenter,
+          // alignment: Alignment.bottomCenter,
           height: widget.screenHeight * 0.065,
           decoration: BoxDecoration(
             border: Border(
               top: BorderSide(
-                color: const Color.fromARGB(30, 255, 0, 0),
+                color: const Color.fromARGB(30, 219, 17, 17),
                 width: 2,
               ),
             )
           ),
           child: BottomNavigationBar(
             // selectedItemColor: Colors.red,
-            selectedItemColor: Color.fromARGB(255, 2, 176, 89),
+            // selectedItemColor: Color.fromARGB(255, 2, 176, 89),
+            selectedItemColor: Colors.deepPurple,
             unselectedItemColor: Colors.black,
             showUnselectedLabels: true,
             // backgroundColor: Colors.amberAccent,
