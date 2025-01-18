@@ -50,7 +50,8 @@ class _HomePageState extends State<HomePage> {
                           // SizedBox(width: 20,),
                           SizedBox(width: widget.screenWidth * 0.04,),
                           CircleAvatar(
-                            radius: 50,
+                            // radius: 50,
+                            radius: widget.screenWidth * 0.1,
                             backgroundColor: Colors.black,
                           ),
                           // SizedBox(width: 20,),
