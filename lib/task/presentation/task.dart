@@ -40,7 +40,8 @@ class _TaskePageState extends State<TaskPage> {
             clipBehavior: Clip.hardEdge,
             builder: (BuildContext context) => Container(
               height: 150,
-              color: Color.fromARGB(255, 238, 241, 239),
+              // color: Color.fromARGB(255, 238, 241, 239),
+              color: const Color.fromARGB(255, 237, 227, 255),
               child: Padding(
                 padding: const EdgeInsets.only(top: 25),
                 child: Row(

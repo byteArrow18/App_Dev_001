@@ -14,7 +14,7 @@ class ShellPage extends StatefulWidget {
 }
 
 class _ShellPageState extends State<ShellPage> {
-  int myIndex = 2;
+  int myIndex = 1;
   @override
   Widget build(BuildContext context) {
     List<Widget> widgetList = [
