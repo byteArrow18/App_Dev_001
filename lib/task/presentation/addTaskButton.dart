@@ -33,7 +33,8 @@ class addTaskButton extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.only(top: 5),
                   width: 350,
-                  height: 70,
+                  // height: 70,
+                  color: const Color.fromARGB(255, 147, 85, 255),
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
@@ -48,13 +49,16 @@ class addTaskButton extends StatelessWidget {
                 FloatingActionButton(
                   onPressed: () => print('pressed'),
                   elevation: 0,
-                  backgroundColor: Color.fromARGB(255, 178, 221, 192),
+                  // backgroundColor: Color.fromARGB(255, 178, 221, 192),
+                  // backgroundColor: Color.fromARGB(255, 185, 144, 255),
+                  backgroundColor: const Color.fromARGB(255, 147, 85, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(500),
                   ),
                   child: Icon(
                     Icons.send_outlined,
-                    color: Color.fromARGB(255, 19, 106, 48),
+                    // color: Color.fromARGB(255, 19, 106, 48),
+                    color: Color.fromARGB(255, 237, 227, 255),
                   ),
                 ),
               ],

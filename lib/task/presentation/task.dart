@@ -19,7 +19,8 @@ class _TaskePageState extends State<TaskPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepOrangeAccent,
+          // backgroundColor: Colors.deepOrangeAccent,
+          backgroundColor: const Color.fromARGB(255, 147, 85, 255),
         ),
         body: Padding(
           padding: EdgeInsets.all(20),
