@@ -5,8 +5,12 @@ import 'package:flutter/material.dart';
 
 
 class TaskPage extends StatefulWidget {
+  final double screenWidth;
+  final double screenHeight;
   const TaskPage({
-    super.key
+    super.key,
+    required this.screenWidth, 
+    required this.screenHeight
   });
 
   @override
@@ -25,7 +29,7 @@ class _TaskePageState extends State<TaskPage> {
         body: Padding(
           padding: EdgeInsets.all(20),
         ),
-        floatingActionButton: addTaskButton(),
+        floatingActionButton: addTaskButton(screenWidth: widget.screenWidth, screenHeight: widget.screenHeight,),
       ),
     );
   }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 class addTaskButton extends StatelessWidget {
+  final double screenWidth;
+  final double screenHeight;
   const addTaskButton({
     super.key,
+    required this.screenWidth, 
+    required this.screenHeight
   });
 
   @override
@@ -21,7 +25,7 @@ class addTaskButton extends StatelessWidget {
         ),
         clipBehavior: Clip.hardEdge,
         builder: (BuildContext context) => Container(
-          height: 150,
+          height: 160,
           // color: Color.fromARGB(255, 238, 241, 239),
           color: const Color.fromARGB(255, 237, 227, 255),
           child: Padding(

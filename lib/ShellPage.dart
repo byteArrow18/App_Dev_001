@@ -8,7 +8,11 @@ import 'package:flutter/material.dart';
 class ShellPage extends StatefulWidget {
   final double screenWidth;
   final double screenHeight;
-  const ShellPage({super.key, required this.screenWidth, required this.screenHeight});
+  const ShellPage({
+    super.key, 
+    required this.screenWidth, 
+    required this.screenHeight
+  });
   // const ShellPage({super.key});
   @override
   State<ShellPage> createState() => _ShellPageState();
@@ -20,7 +24,7 @@ class _ShellPageState extends State<ShellPage> {
   Widget build(BuildContext context) {
     List<Widget> widgetList = [
       Text('Menu'),
-      TaskPage(),
+      TaskPage(screenWidth: widget.screenWidth, screenHeight: widget.screenHeight,),
       // Text('Task'),
       HomePage(screenHeight: widget.screenHeight, screenWidth: widget.screenWidth),
       // Text('Home')
@@ -39,7 +43,7 @@ class _ShellPageState extends State<ShellPage> {
         bottomNavigationBar: Container(
           padding: EdgeInsets.zero,
           // alignment: Alignment.bottomCenter,
-          height: widget.screenHeight * 0.065,
+          height: widget.screenHeight * 0.09,
           decoration: BoxDecoration(
             border: Border(
               top: BorderSide(
@@ -53,6 +57,7 @@ class _ShellPageState extends State<ShellPage> {
             selectedItemColor: const Color.fromARGB(255, 147, 85, 255),
             unselectedItemColor: Colors.black,
             showUnselectedLabels: true,
+            // iconSize: widget.screenHeight * widget.screenWidth * 0.000023,
             // backgroundColor: Colors.amberAccent,
             // showUnselectedLabels: true,
             type: BottomNavigationBarType.fixed,
