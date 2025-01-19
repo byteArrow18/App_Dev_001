@@ -28,7 +28,7 @@ class BottomBarIcon extends StatelessWidget {
           onPressed:  
             () {
             Navigator.push(context,
-              MaterialPageRoute(builder: (context) => TaskPage()),
+              MaterialPageRoute(builder: (context) => TaskPage(screenWidth: 0, screenHeight: 0,)),
             );
           },
         ),

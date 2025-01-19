@@ -25,7 +25,7 @@ class addTaskButton extends StatelessWidget {
         ),
         clipBehavior: Clip.hardEdge,
         builder: (BuildContext context) => Container(
-          height: 160,
+          height: screenHeight * 0.2,
           // color: Color.fromARGB(255, 238, 241, 239),
           color: const Color.fromARGB(255, 237, 227, 255),
           child: Padding(
@@ -36,7 +36,7 @@ class addTaskButton extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.only(top: 5),
-                  width: 350,
+                  width: screenWidth * 0.75,
                   // height: 70,
                   color: const Color.fromARGB(255, 147, 85, 255),
                   child: TextField(
