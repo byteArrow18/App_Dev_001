@@ -27,7 +27,5 @@ class _TaskePageState extends State<TaskPage> {
         floatingActionButton: addTaskButton(),
       ),
     );
-    // TODO: implement build
-    // throw UnimplementedError();
   }
 }

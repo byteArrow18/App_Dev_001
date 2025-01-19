@@ -1,5 +1,8 @@
 // ignore_for_file: file_names
 
+import 'dart:io';
+
+import 'package:app_dev_001/files/presentation/files.dart';
 import 'package:app_dev_001/summary/presentation/summary.dart';
 import 'package:app_dev_001/task/presentation/task.dart';
 import 'package:flutter/material.dart';
@@ -18,12 +21,14 @@ class _ShellPageState extends State<ShellPage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> widgetList = [
-      Text('Home'),
+      Text('Menu'),
       TaskPage(),
       // Text('Task'),
       HomePage(screenHeight: widget.screenHeight, screenWidth: widget.screenWidth),
+      // Text('Home')
       Text('Date'),
-      Text('Notifications'),
+      Files(),
+      // Text('Files'),
     ];
     return SafeArea(
       child: Scaffold(
