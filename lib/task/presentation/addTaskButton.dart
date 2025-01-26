@@ -1,5 +1,7 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class addTaskButton extends StatelessWidget {
   final double screenWidth;
   final double screenHeight;
