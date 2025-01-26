@@ -51,6 +51,7 @@ class addTaskButton extends StatelessWidget {
                 ),
                 SizedBox(width: 20,),
                 FloatingActionButton(
+                  // ignore: avoid_print
                   onPressed: () => print('pressed'),
                   elevation: 0,
                   // backgroundColor: Color.fromARGB(255, 178, 221, 192),
